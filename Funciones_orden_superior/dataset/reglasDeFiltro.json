@@ -1,0 +1,12 @@
+[
+  {
+    "operator": "<=",
+    "attribute": "nivel",
+    "value": 50
+  },
+  {
+    "operator": "includes",
+    "attribute": "habilidades",
+    "value": "dash"
+  }
+]
