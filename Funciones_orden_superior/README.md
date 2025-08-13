@@ -22,6 +22,9 @@ fabricaDePredicados.js (antes filtros.js): expone construirPredicado(...).
 index.js: carga datos y reglas, aplica filtros y muestra el resultado.
 
 
+
+<img width="1536" height="1024" alt="DiagramaEjercicio" src="https://github.com/user-attachments/assets/21d8de7d-d086-4b9c-ab01-1cf67dea21c1" />
+
 ## Tarea (paso a paso)
 Lectura del código
 a) Abrí fabricaDePredicados.js y explicá qué hace el objeto comparadores (diccionario de funciones).
