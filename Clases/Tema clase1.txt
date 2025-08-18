@@ -1,0 +1,26 @@
+
+/*
+
+TEMA HERRAMIENTAS
+    |-- Visual Studio Code
+    |-- Node JS
+    |-- 
+TEMA OPERADORES
+    |
+    |-- Operadores y Expresiones
+    |-- Condicionales ternarios
+TEMA FUNCIONES                                              
+            |
+            |----- Funciones Puras.
+            |----- Función lambda
+            |----- Composición de Funciones.
+            |----- Funciones Recursivas.
+            |----- Funciones de orden superior.
+
+TEMA ESTRUCTURA DE DATOS   
+        |    
+        |----- Arrays: some, every, map, filter, reduce
+
+
+           
+*/
