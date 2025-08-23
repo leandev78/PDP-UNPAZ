@@ -1,3 +1,10 @@
+##
+## ######################### ##
+## FUNCION DE ORDEN SUPERIOR ##
+## ######################### ##
+##
+
+
 ## Enunciado: Selector de personajes por reglas declarativas
 Tema: funciones de primera clase, funciones de orden superior, predicados, clausuras, require de JSON en Node.js.
 
