@@ -33,8 +33,31 @@ const r2 = lista.every(n => n > 0);
 console.log('2) ¿Todos > 0?:', r2); // true
 
 // 3) Solo los números pares (orden original)
-const r3 = lista.filter(esPar);
-console.log('3) Pares:', r3);
+const soloPares = lista.filter(esPar);
+console.log('3) Pares:', soloPares);
+
+    //a) Si queremos sin repetidos (opcional)
+    const paresSinRep = soloPares
+      .filter((n, i, arr) => !arr.some((m, j) => m === n && j < i));
+    console.log('3) Pares sin repetidos:', paresSinRep);
+
+    //b) Otra forma de velor!
+    const paresSinRepetidos = soloPares.filter((n, i, arr) => {
+      const antariores = arr.filter((m, j) => j < i); // todos los anteriores a "i"
+      return !antariores.some((m) => m === n); // si no hay ninguno igual a "n"
+    });
+
+    console.log(paresSinRepetidos);
+
+    const menoresQue10 = paresSinRepetidos.filter((n) => n < 10);
+
+    console.log(menoresQue10);
+
+
+    //c) Por ultimo, otra forma mas simple (pero menos "didáctica") ***
+    const sinDupl = pares.filter( (n,i,arr) =>  i === arr.indexOf(n) && n<10 );  // devuelve true si es la primera ocurrencia
+    console.log(sinDupl);  // [ 4, 2 ]
+
 
 // 4) Cuadrado de cada número
 const r4 = lista.map(cuadrado);
