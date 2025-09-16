@@ -1,3 +1,6 @@
+// INDICES CON JAVASCRIPT
+
+
 /**
  * some: ¿hay alguna película disponible? → peliculas.some(p => p.disponible)
  * every: ¿todas son posteriores a 2010? → peliculas.every(p => p.anio > 2010)
@@ -6,13 +9,6 @@
  */
 
 const peliculas = require("../dataset/peliculas.json")
-
-
-/**
- *  
- * BUSQUEDA POR INDICES 
- * 
- * */
 
 
 // Construccion de un indice.
