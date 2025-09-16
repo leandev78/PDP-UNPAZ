@@ -1,0 +1,15 @@
+{
+  "name": "demo",
+  "version": "1.0.0",
+  "description": "Aplicación demo en Javascrtip",
+  "main": "index.js",
+  "scripts": {
+    "dev":  "node --watch ./src/index.js",
+    "menu": "node ./src/menu.js"
+  },
+
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module"
+}
