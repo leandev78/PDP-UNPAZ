@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contador regresivo</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #0077b6, #00b4d8);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: "Segoe UI", sans-serif;
+      margin: 0;
+      flex-direction: column;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    #contador {
+      font-size: 4em;
+      font-weight: bold;
+      letter-spacing: 2px;
+      background-color: rgba(255, 255, 255, 0.2);
+      padding: 20px 40px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #mensaje {
+      margin-top: 25px;
+      font-size: 1.5em;
+      color: #ffdd00;
+      font-weight: bold;
+      text-shadow: 0 0 8px #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>PARADIGMAS DE PROGRAMACIÓN</h1>
+  <h1>⏳ Comenzamos en...</h1>
+  <div id="contador">35:00</div>
+  <div id="mensaje"></div>
+
+  <script>
+    // Tiempo inicial en segundos (30 minutos = 1800 segundos)
+    let tiempoRestante = 35 * 60;
+
+    const contador = document.getElementById('contador');
+    const mensaje = document.getElementById('mensaje');
+
+    const intervalo = setInterval(() => {
+      const minutos = Math.floor(tiempoRestante / 60);
+      const segundos = tiempoRestante % 60;
+
+      contador.textContent = 
+        `${minutos.toString().padStart(2, '0')}:${segundos.toString().padStart(2, '0')}`;
+
+      if (tiempoRestante <= 0) {
+        clearInterval(intervalo);
+        contador.textContent = "00:00";
+        mensaje.textContent = "¡Tiempo finalizado!";
+        document.body.style.background = "linear-gradient(135deg, #d00000, #ff4d6d)";
+      }
+
+      tiempoRestante--;
+    }, 1000);
+  </script>
+
+</body>
+</html>
