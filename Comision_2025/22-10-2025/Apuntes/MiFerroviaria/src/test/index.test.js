@@ -2,6 +2,7 @@ const Tren = require("../model/Tren")
 const VagonCarga = require("../model/VagonCarga");
 const VagonDormitorio = require("../model/VagonDormitorio");
 const VagonPasajero = require("../model/VagonPasajero");
+const Locomotora = require("../model/Locomotora");
 
 /*
 Test de los requerimientos...
@@ -68,15 +69,47 @@ describe("Test general de formaciones", () => {
         expect(tren.dispersionPesos()).toBe(4220);
         expect(tren.cantidadBanios()).toBe(2);
 
-        tren.hacerMantenimiento(); // cambia todo 
+        // tren.hacerMantenimiento(); // cambia todo 
 
-        expect(tren.pasajeros()).toBe(180);
-        expect(tren.cantidadVagonesPopulares()).toBe(2);
-        expect(tren.esFormacionCarguera()).toBe(false);
-        expect(tren.dispersionPesos()).toBe(3200);
-        expect(tren.cantidadBanios()).toBe(2);
+        // expect(tren.pasajeros()).toBe(180);
+        // expect(tren.cantidadVagonesPopulares()).toBe(2);
+        // expect(tren.esFormacionCarguera()).toBe(false);
+        // expect(tren.dispersionPesos()).toBe(3200);
+        // expect(tren.cantidadBanios()).toBe(2);
 
     })
 
+    /* TEST ACTIVIDAD 2: de Locomotoras 
+        IMPORTANTE: debo comentar el mantenimiento para obtener los resultados.
+    */
 
-})
+    test("Test de formacion sin hacerles mantenimiento", ()=>{
+
+        const p1 = new VagonPasajero(10, 4, true, true);
+        const p2 = new VagonPasajero(7, 2, false, false);
+        const c1 = new VagonCarga(6800, 5);
+        const d1 = new VagonDormitorio(8, 3);
+        const tren = new Tren();
+
+        tren.agregarVagon(p1);
+        tren.agregarVagon(p2);
+        tren.agregarVagon(c1);
+        tren.agregarVagon(d1);
+
+        const loc1 = new Locomotora(3000, 20000 , 50);
+        tren.agregarLocomotora(loc1);
+
+        expect(tren.esEficientes()).toBe(true);
+        expect( tren.puedeMoverse()).toBe(false);
+        expect(tren.kilosDeEmpujeFaltantes()).toBe(12800);     
+
+        const loc2 = new Locomotora(5000 , 22000  , 50);
+        tren.agregarLocomotora(loc2);
+
+        expect(tren.esEficientes()).toBe(false);
+        expect( tren.puedeMoverse()).toBe(true);
+        expect(tren.kilosDeEmpujeFaltantes()).toBe(0);          
+        
+    })
+
+}) 

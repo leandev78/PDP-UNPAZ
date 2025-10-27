@@ -16,6 +16,8 @@ class Vagon {
 
     recibirMantenimiento(){}  // extra
 
+    obtenerTipo(){}
+
 }
 
 module.exports = Vagon;
