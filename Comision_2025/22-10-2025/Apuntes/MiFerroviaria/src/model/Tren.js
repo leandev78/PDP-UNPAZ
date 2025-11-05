@@ -62,6 +62,9 @@ class Tren {
         this.vagones.forEach((vagon) => vagon.recibirMantenimiento());
     }
 
+
+    // == Métodos para punto Extra Etapa 1 ==
+
     estaEquilibrada(){
 
         const umbral = 20;
@@ -84,7 +87,7 @@ class Tren {
     }
 
 
-    // == Métodos para Locomotoras ==
+    // == ETAPA 2 - Métodos para Locomotoras ==
 
     //1) su velocidad máxima , que es el mínimo entre las velocidades máximas de las locomotoras.
     valocidadMaxima(){
@@ -122,6 +125,7 @@ class Tren {
 
     puedeMoverse(){
         if (this.locomotoras.length === 0) return null;
+        console.log(`Arrastre total locomotoras ${this.arrastreTotal()} y peso máximo formación ${this.pesoMaximoFormacion()}`);
         return this.arrastreTotal() >= this.pesoMaximoFormacion();
     }
     
